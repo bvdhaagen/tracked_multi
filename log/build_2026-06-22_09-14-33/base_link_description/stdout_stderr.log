@@ -1,0 +1,68 @@
+running egg_info
+creating ../build/base_link_description/base_link_description.egg-info
+writing ../build/base_link_description/base_link_description.egg-info/PKG-INFO
+writing dependency_links to ../build/base_link_description/base_link_description.egg-info/dependency_links.txt
+writing entry points to ../build/base_link_description/base_link_description.egg-info/entry_points.txt
+writing requirements to ../build/base_link_description/base_link_description.egg-info/requires.txt
+writing top-level names to ../build/base_link_description/base_link_description.egg-info/top_level.txt
+writing manifest file '../build/base_link_description/base_link_description.egg-info/SOURCES.txt'
+reading manifest file '../build/base_link_description/base_link_description.egg-info/SOURCES.txt'
+writing manifest file '../build/base_link_description/base_link_description.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /home/arham/tracked_multi/build/base_link_description/build
+creating /home/arham/tracked_multi/build/base_link_description/build/lib
+creating /home/arham/tracked_multi/build/base_link_description/build/lib/base_link_description
+copying base_link_description/__init__.py -> /home/arham/tracked_multi/build/base_link_description/build/lib/base_link_description
+running install
+running install_lib
+creating /home/arham/tracked_multi/install/base_link_description/lib/python3.10/site-packages/base_link_description
+copying /home/arham/tracked_multi/build/base_link_description/build/lib/base_link_description/__init__.py -> /home/arham/tracked_multi/install/base_link_description/lib/python3.10/site-packages/base_link_description
+byte-compiling /home/arham/tracked_multi/install/base_link_description/lib/python3.10/site-packages/base_link_description/__init__.py to __init__.cpython-310.pyc
+running install_data
+creating /home/arham/tracked_multi/install/base_link_description/share/ament_index
+creating /home/arham/tracked_multi/install/base_link_description/share/ament_index/resource_index
+creating /home/arham/tracked_multi/install/base_link_description/share/ament_index/resource_index/packages
+copying resource/base_link_description -> /home/arham/tracked_multi/install/base_link_description/share/ament_index/resource_index/packages
+copying package.xml -> /home/arham/tracked_multi/install/base_link_description/share/base_link_description
+creating /home/arham/tracked_multi/install/base_link_description/share/base_link_description/launch
+copying launch/display.launch.py -> /home/arham/tracked_multi/install/base_link_description/share/base_link_description/launch
+copying launch/control.launch.py -> /home/arham/tracked_multi/install/base_link_description/share/base_link_description/launch
+copying launch/gazebo.launch.py -> /home/arham/tracked_multi/install/base_link_description/share/base_link_description/launch
+creating /home/arham/tracked_multi/install/base_link_description/share/base_link_description/urdf
+copying urdf/base_link.ros2control.xml -> /home/arham/tracked_multi/install/base_link_description/share/base_link_description/urdf
+copying urdf/base_link.xacro -> /home/arham/tracked_multi/install/base_link_description/share/base_link_description/urdf
+copying urdf/base_link.gazebo -> /home/arham/tracked_multi/install/base_link_description/share/base_link_description/urdf
+copying urdf/materials.xacro -> /home/arham/tracked_multi/install/base_link_description/share/base_link_description/urdf
+creating /home/arham/tracked_multi/install/base_link_description/share/base_link_description/meshes
+copying meshes/right_back_wheel_v2_1.stl -> /home/arham/tracked_multi/install/base_link_description/share/base_link_description/meshes
+copying meshes/right_glide_wheel_3_v2_1.stl -> /home/arham/tracked_multi/install/base_link_description/share/base_link_description/meshes
+copying meshes/left_track_v3_1.stl -> /home/arham/tracked_multi/install/base_link_description/share/base_link_description/meshes
+copying meshes/left_bar_v2_1.stl -> /home/arham/tracked_multi/install/base_link_description/share/base_link_description/meshes
+copying meshes/antenna_v2_1.stl -> /home/arham/tracked_multi/install/base_link_description/share/base_link_description/meshes
+copying meshes/left_back_wheel_v2_1.stl -> /home/arham/tracked_multi/install/base_link_description/share/base_link_description/meshes
+copying meshes/right_bar_v2_1.stl -> /home/arham/tracked_multi/install/base_link_description/share/base_link_description/meshes
+copying meshes/right_track_v2_1.stl -> /home/arham/tracked_multi/install/base_link_description/share/base_link_description/meshes
+copying meshes/left_front_glide_wheel_holder_v2_1.stl -> /home/arham/tracked_multi/install/base_link_description/share/base_link_description/meshes
+copying meshes/left_glide_wheel_1_v2_1.stl -> /home/arham/tracked_multi/install/base_link_description/share/base_link_description/meshes
+copying meshes/right_glide_wheel_1_v2_1.stl -> /home/arham/tracked_multi/install/base_link_description/share/base_link_description/meshes
+copying meshes/left_glide_wheel_3_v2_1.stl -> /home/arham/tracked_multi/install/base_link_description/share/base_link_description/meshes
+copying meshes/right_front_wheel_v2_1.stl -> /home/arham/tracked_multi/install/base_link_description/share/base_link_description/meshes
+copying meshes/left_glide_wheel_2_v2_1.stl -> /home/arham/tracked_multi/install/base_link_description/share/base_link_description/meshes
+copying meshes/left_front_wheel_v2_1.stl -> /home/arham/tracked_multi/install/base_link_description/share/base_link_description/meshes
+copying meshes/base_link.stl -> /home/arham/tracked_multi/install/base_link_description/share/base_link_description/meshes
+copying meshes/left_glide_wheel_4_v2_1.stl -> /home/arham/tracked_multi/install/base_link_description/share/base_link_description/meshes
+copying meshes/right_glide_wheel_4_v2_1.stl -> /home/arham/tracked_multi/install/base_link_description/share/base_link_description/meshes
+copying meshes/right_back_glide_wheel_holder_v2_1.stl -> /home/arham/tracked_multi/install/base_link_description/share/base_link_description/meshes
+copying meshes/right_glide_wheel_2_v2_1.stl -> /home/arham/tracked_multi/install/base_link_description/share/base_link_description/meshes
+copying meshes/left_back_glide_wheel_holder_v2_1.stl -> /home/arham/tracked_multi/install/base_link_description/share/base_link_description/meshes
+copying meshes/right_front_glide_wheel_holder_v2_1.stl -> /home/arham/tracked_multi/install/base_link_description/share/base_link_description/meshes
+creating /home/arham/tracked_multi/install/base_link_description/share/base_link_description/config
+copying config/controllers.yaml -> /home/arham/tracked_multi/install/base_link_description/share/base_link_description/config
+copying config/ros_gz_bridge_gazebo.yaml -> /home/arham/tracked_multi/install/base_link_description/share/base_link_description/config
+copying config/display.rviz -> /home/arham/tracked_multi/install/base_link_description/share/base_link_description/config
+copying config/gazebo.rviz -> /home/arham/tracked_multi/install/base_link_description/share/base_link_description/config
+running install_egg_info
+Copying ../build/base_link_description/base_link_description.egg-info to /home/arham/tracked_multi/install/base_link_description/lib/python3.10/site-packages/base_link_description-0.0.0-py3.10.egg-info
+running install_scripts
+writing list of installed files to '/home/arham/tracked_multi/build/base_link_description/install.log'

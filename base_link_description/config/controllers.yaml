@@ -1,0 +1,62 @@
+# ros2_control controller configuration for the tank base.
+#
+# Loaded by:
+#   * launch/control.launch.py  -> standalone ros2_control_node (mock hardware)
+#   * the gz_ros2_control plugin -> when spawned in Gazebo Sim
+#
+# Drive layout (skid-steer / tracked, 4 driven wheels):
+#   left  = [ "Revolute 11" (front), "Revolute 22" (back) ]
+#   right = [ "Revolute 10" (front), "Revolute 8"  (back) ]
+
+controller_manager:
+  ros__parameters:
+    update_rate: 100  # Hz
+
+    joint_state_broadcaster:
+      type: joint_state_broadcaster/JointStateBroadcaster
+
+    diff_drive_base_controller:
+      type: diff_drive_controller/DiffDriveController
+
+diff_drive_base_controller:
+  ros__parameters:
+    left_wheel_names:  ["Revolute 11", "Revolute 22"]
+    right_wheel_names: ["Revolute 10", "Revolute 8"]
+
+    # Geometry (from the URDF): wheels sit at x = +/-0.445 -> ~0.89 m apart.
+    # wheel_radius is an estimate - tune it to match the real track sprocket.
+    wheel_separation: 0.89
+    wheel_radius: 0.2
+
+    wheel_separation_multiplier: 1.0
+    left_wheel_radius_multiplier: 1.0
+    right_wheel_radius_multiplier: 1.0
+
+    publish_rate: 50.0
+    odom_frame_id: odom
+    base_frame_id: base_footprint
+    pose_covariance_diagonal:  [0.001, 0.001, 0.001, 0.001, 0.001, 0.01]
+    twist_covariance_diagonal: [0.001, 0.001, 0.001, 0.001, 0.001, 0.01]
+
+    # open_loop:true drives odometry straight from the velocity command, so the
+    # base moves in RViz even with mock hardware and no physics engine.
+    open_loop: true
+    enable_odom_tf: true
+
+    # Accept plain geometry_msgs/Twist on /cmd_vel (set true for TwistStamped).
+    use_stamped_vel: false
+
+    cmd_vel_timeout: 0.5
+    velocity_rolling_window_size: 10
+
+    linear.x.has_velocity_limits: true
+    linear.x.has_acceleration_limits: true
+    linear.x.max_velocity: 2.0
+    linear.x.min_velocity: -2.0
+    linear.x.max_acceleration: 1.0
+
+    angular.z.has_velocity_limits: true
+    angular.z.has_acceleration_limits: true
+    angular.z.max_velocity: 2.0
+    angular.z.min_velocity: -2.0
+    angular.z.max_acceleration: 1.0
