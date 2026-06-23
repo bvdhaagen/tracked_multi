@@ -40,12 +40,10 @@ def generate_launch_description():
     # so the tank is seen driving across the grid.
     rviz_config = os.path.join(share_dir, 'config', 'gazebo.rviz')
 
-    robot_state_publisher = Node(
-        package='robot_state_publisher',
-        executable='robot_state_publisher',
-        output='both',
-        parameters=[robot_description],
-    )
+    # Teleop configuration
+    teleop_twist_joy_config_file = os.path.join(share_dir, 'config', 'ps4.config.yaml')
+
+    
 
     # Controller manager hosts the mock hardware. Remap the diff-drive's
     # command topic to the conventional /cmd_vel.
@@ -71,6 +69,31 @@ def generate_launch_description():
         arguments=['diff_drive_base_controller', '--controller-manager', '/controller_manager'],
     )
 
+    robot_state_publisher = Node(
+        package='robot_state_publisher',
+        executable='robot_state_publisher',
+        output='both',
+        parameters=[robot_description],
+    )
+
+    # Joystick nodes (disabled by default, uncomment when ready)
+    joy_node = Node(
+        package='joy', executable='joy_node', name='joy_node',
+        parameters=[{
+            'deadzone': 0.05,
+            'autorepeat_rate': 30.0
+        }],
+    )
+
+    teleop_twist_joy_node = Node(
+        package='teleop_twist_joy',
+        executable='teleop_node',
+        name='teleop_twist_joy_node',
+        parameters=[teleop_twist_joy_config_file],
+        remappings=[
+            ('/cmd_vel', '/cmd_vel'),  
+        ]
+    )
     rviz_node = Node(
         package='rviz2',
         executable='rviz2',
@@ -94,5 +117,7 @@ def generate_launch_description():
             joint_state_broadcaster_spawner,
             delay_diff_drive,
             rviz_node,
+            teleop_twist_joy_node,
+            joy_node,
         ]
     )
