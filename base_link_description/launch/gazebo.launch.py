@@ -34,6 +34,8 @@ def generate_launch_description():
 
     gui_arg = DeclareLaunchArgument('rviz', default_value='true',
                                     description='Open RViz.')
+    teleop_arg = DeclareLaunchArgument('teleop', default_value='true',
+                                       description='Open a keyboard teleop terminal to drive the tank.')
 
     # Start Robot state publisher
     robot_state_publisher = Node(
@@ -89,13 +91,28 @@ def generate_launch_description():
         condition=IfCondition(LaunchConfiguration('rviz')),
     )
 
+    # Keyboard teleop, opened in its own terminal window so it can read keys.
+    # Publishes geometry_msgs/Twist on /cmd_vel. Only linear.x + angular.z are
+    # sent by the normal (lowercase) keys -> the tank drives/turns but never
+    # strafes sideways. Press 'k' to stop.
+    teleop = Node(
+        package='teleop_twist_keyboard',
+        executable='teleop_twist_keyboard',
+        name='teleop_twist_keyboard',
+        prefix='gnome-terminal --',
+        output='screen',
+        condition=IfCondition(LaunchConfiguration('teleop')),
+    )
+
     return LaunchDescription(
         [
             gui_arg,
+            teleop_arg,
             gazebo,
             spawn,
             start_gazebo_ros_bridge_cmd,
             robot_state_publisher,
             rviz,
+            teleop,
         ]
     )

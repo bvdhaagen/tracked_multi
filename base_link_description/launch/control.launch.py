@@ -25,6 +25,8 @@ def generate_launch_description():
 
     declared_args = [
         DeclareLaunchArgument('gui', default_value='true', description='Launch RViz.'),
+        DeclareLaunchArgument('teleop', default_value='true',
+                              description='Open a keyboard teleop terminal to drive the tank.'),
     ]
     gui = LaunchConfiguration('gui')
 
@@ -87,6 +89,17 @@ def generate_launch_description():
         )
     )
 
+    # Keyboard teleop in its own terminal. diff_drive_controller only consumes
+    # linear.x + angular.z, so the tank can never strafe. Press 'k' to stop.
+    teleop = Node(
+        package='teleop_twist_keyboard',
+        executable='teleop_twist_keyboard',
+        name='teleop_twist_keyboard',
+        prefix='gnome-terminal --',
+        output='screen',
+        condition=IfCondition(LaunchConfiguration('teleop')),
+    )
+
     return LaunchDescription(
         declared_args + [
             robot_state_publisher,
@@ -94,5 +107,6 @@ def generate_launch_description():
             joint_state_broadcaster_spawner,
             delay_diff_drive,
             rviz_node,
+            teleop,
         ]
     )

@@ -166,12 +166,20 @@
   <gazebo>
     <plugin filename="ignition-gazebo-diff-drive-system"
             name="ignition::gazebo::systems::DiffDrive">
-      <!-- left side -->
-      <left_joint>Revolute 11</left_joint>
-      <left_joint>Revolute 22</left_joint>
-      <!-- right side -->
-      <right_joint>Revolute 10</right_joint>
-      <right_joint>Revolute 8</right_joint>
+      <!-- LEFT side: 2 drive sprockets + 4 idle/road wheels = 6 wheels -->
+      <left_joint>Revolute 11</left_joint>   <!-- left front drive  -->
+      <left_joint>Revolute 22</left_joint>   <!-- left back drive   -->
+      <left_joint>Revolute 14</left_joint>   <!-- left idle 1 -->
+      <left_joint>Revolute 15</left_joint>   <!-- left idle 2 -->
+      <left_joint>Revolute 16</left_joint>   <!-- left idle 3 -->
+      <left_joint>Revolute 17</left_joint>   <!-- left idle 4 -->
+      <!-- RIGHT side: 2 drive sprockets + 4 idle/road wheels = 6 wheels -->
+      <right_joint>Revolute 10</right_joint> <!-- right front drive  -->
+      <right_joint>Revolute 8</right_joint>  <!-- right back drive   -->
+      <right_joint>Revolute 18</right_joint> <!-- right idle 1 -->
+      <right_joint>Revolute 19</right_joint> <!-- right idle 2 -->
+      <right_joint>Revolute 20</right_joint> <!-- right idle 3 -->
+      <right_joint>Revolute 21</right_joint> <!-- right idle 4 -->
 
       <wheel_separation>0.89</wheel_separation>
       <wheel_radius>0.2</wheel_radius>

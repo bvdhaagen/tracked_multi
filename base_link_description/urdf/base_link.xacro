@@ -596,28 +596,28 @@
   <origin xyz="0.0 -0.138507 -0.26173" rpy="0 0 0"/>
   <parent link="right_back_glide_wheel_holder_v2_1"/>
   <child link="right_glide_wheel_1_v2_1"/>
-  <axis xyz="1.0 0.0 0.0"/>
+  <axis xyz="-1.0 0.0 0.0"/>
 </joint>
 
 <joint name="Revolute 19" type="continuous">
   <origin xyz="0.0 0.136493 -0.26173" rpy="0 0 0"/>
   <parent link="right_back_glide_wheel_holder_v2_1"/>
   <child link="right_glide_wheel_2_v2_1"/>
-  <axis xyz="1.0 0.0 0.0"/>
+  <axis xyz="-1.0 0.0 0.0"/>
 </joint>
 
 <joint name="Revolute 20" type="continuous">
   <origin xyz="0.0 -0.138506 -0.26173" rpy="0 0 0"/>
   <parent link="right_front_glide_wheel_holder_v2_1"/>
   <child link="right_glide_wheel_3_v2_1"/>
-  <axis xyz="1.0 0.0 0.0"/>
+  <axis xyz="-1.0 0.0 0.0"/>
 </joint>
 
 <joint name="Revolute 21" type="continuous">
   <origin xyz="0.0 0.136494 -0.26173" rpy="0 0 0"/>
   <parent link="right_front_glide_wheel_holder_v2_1"/>
   <child link="right_glide_wheel_4_v2_1"/>
-  <axis xyz="1.0 0.0 0.0"/>
+  <axis xyz="-1.0 0.0 0.0"/>
 </joint>
 
 <joint name="Revolute 22" type="continuous">

@@ -5,8 +5,8 @@
 #   * the gz_ros2_control plugin -> when spawned in Gazebo Sim
 #
 # Drive layout (skid-steer / tracked, 4 driven wheels):
-#   left  = [ "Revolute_11" (front), "Revolute_22" (back) ]
-#   right = [ "Revolute_10" (front), "Revolute_8"  (back) ]
+#   left  = [ "Revolute 11" (front), "Revolute 22" (back) ]
+#   right = [ "Revolute 10" (front), "Revolute 8"  (back) ]
 
 controller_manager:
   ros__parameters:
@@ -20,8 +20,9 @@ controller_manager:
 
 diff_drive_base_controller:
   ros__parameters:
-    left_wheel_names:  ["Revolute_11", "Revolute_22"] #, "Revolute_14", "Revolute_15", "Revolute_16", "Revolute_17"]
-    right_wheel_names: ["Revolute_10", "Revolute_8"] #, "Revolute_18", "Revolute_19", "Revolute_20", "Revolute_21"]
+    # 6 wheels per side (2 drive + 4 idle) so the whole running gear spins.
+    left_wheel_names:  ["Revolute 11", "Revolute 22", "Revolute 14", "Revolute 15", "Revolute 16", "Revolute 17"]
+    right_wheel_names: ["Revolute 10", "Revolute 8",  "Revolute 18", "Revolute 19", "Revolute 20", "Revolute 21"]
 
     # Geometry (from the URDF): wheels sit at x = +/-0.445 -> ~0.89 m apart.
     # wheel_radius is an estimate - tune it to match the real track sprocket.
